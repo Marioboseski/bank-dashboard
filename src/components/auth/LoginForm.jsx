@@ -1,5 +1,6 @@
 import useForm from "../../hooks/useForm";
 import validateLoginForm from "../../utils/validateLoginForm";
+import { useNavigate } from "react-router-dom";
 
 const initialValues = {
   name: "",
@@ -8,8 +9,13 @@ const initialValues = {
 };
 
 const LoginForm = () => {
+  const navigate = useNavigate()
+
+  const handleLogin = () => {
+    navigate("/dashboard")
+  }
   
-  const { errors, values, handleChange, handleSubmit } = useForm(initialValues, validateLoginForm);
+  const { errors, values, handleChange, handleSubmit } = useForm(initialValues, validateLoginForm, handleLogin);
 
   return (
     <div>
@@ -42,6 +48,7 @@ const LoginForm = () => {
            {errors.password && <p>{errors.password}</p>}
         </div>
 
+        <button type="submit">Log in</button>
       </form>
     </div>
   );
