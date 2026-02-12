@@ -18,37 +18,40 @@ const LoginForm = () => {
   const { errors, values, handleChange, handleSubmit } = useForm(initialValues, validateLoginForm, handleLogin);
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
+    <div className="flex justify-center items-center text-center w-full p-3">
+      <form onSubmit={handleSubmit} className="flex flex-col justify-evenly items-center min-h-[550px] border-2 w-full max-w-[500px]"> 
 
-        <div>
+        <div className="forms-divs-inputs">
           <input type="text"
            name="name"
            value={values.name}
            onChange={handleChange}
-           placeholder="Name" />
-           {errors.name && <p>{errors.name}</p>}
+           placeholder="Name"
+           className="forms-inputs" />
+           {errors.name && <p className="forms-errors">{errors.name}</p>}
         </div>
 
-         <div>
+         <div className="forms-divs-inputs">
           <input type="email"
            name="email"
            value={values.email}
            onChange={handleChange} 
-           placeholder="Email"/>
-           {errors.email && <p>{errors.email}</p>}
+           placeholder="Email"
+           className="forms-inputs" />
+           {errors.email && <p className="forms-errors">{errors.email}</p>}
         </div>
 
-         <div>
+         <div className="forms-divs-inputs">
           <input type="password"
            name="password"
            value={values.password}
            onChange={handleChange}
-           placeholder="*******" />
-           {errors.password && <p>{errors.password}</p>}
+           placeholder="*******"
+           className="forms-inputs" />
+           {errors.password && <p className="forms-errors">{errors.password}</p>}
         </div>
 
-        <button type="submit">Log in</button>
+        <button type="submit" className="border-2 p-1 w-full max-w-32 text-lg border-black rounded-md">Log in</button>
       </form>
     </div>
   );

@@ -1,3 +1,22 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .container {
+    @apply w-full max-w-[1200px] mx-auto
+  }
+
+  .forms-inputs {
+    @apply text-xl p-2 border-none rounded-md
+  }
+
+  .forms-divs-inputs {
+    @apply  flex flex-col text-left w-full max-w-80
+  }
+
+  .forms-errors {
+    @apply text-red-500 text-sm
+  }
+  
+}
