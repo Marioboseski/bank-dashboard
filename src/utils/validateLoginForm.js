@@ -2,6 +2,10 @@ const validateLoginForm = (values) => {
 
   const errors = {};
 
+  if(!values.name.trim()) {
+    errors.name = "Name required"
+  }
+
   if(!values.email) {
     errors.email = "Email required";    
   } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(values.email)) {
