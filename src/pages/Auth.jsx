@@ -11,9 +11,9 @@ const Auth = () => {
   }
 
   return (
-    <div>
+    <div className="flex flex-col justify-center items-center min-h-dvh gap-2 bg-blue-300">
       {logged ? <LoginForm/> : <RegisterForm/>}
-      <button onClick={toggleAuthMode}>{logged ? "Don't have an account? Register" : "Already have an account? Login"}</button>
+      <button onClick={toggleAuthMode} className="border-b border-gray-100">{logged ? "Don't have an account? Register" : "Already have an account? Login"}</button>
     </div>
   );
 }
