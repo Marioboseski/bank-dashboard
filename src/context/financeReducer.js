@@ -5,12 +5,30 @@ const financeReducer = (state, action) => {
       return {
         ...state,
         balance: state.balance + action.payload,
+        transactions: [
+          {
+            id: Date.now(),
+            type: "deposit",
+            amount: action.payload,
+            date: new Date().toISOString()
+          },
+          ...state.transactions
+        ]
       };
 
     case "PAY_BILL":
       return {
         ...state,
         balance: state.balance - action.payload,
+        transactions: [
+          {
+            id: Date.now(),
+            type: "expense",
+            amount: action.payload,
+            date: new Date().toISOString()
+          },
+          ...state.transactions
+        ]
       };
 
     default:
