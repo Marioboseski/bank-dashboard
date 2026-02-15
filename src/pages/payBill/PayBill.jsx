@@ -9,14 +9,16 @@ const PayBill = () => {
 
   return (
     <div>
-      <ActionPage 
-      Icon={HandCoins}
-      title={"Pay bill"}
-      description={"Pay your bills online"}
-      balance={balance}
-      buttonText={"Pay bill"}
-      color={"red"}
-      onSubmit={payBill}
+      <ActionPage
+        Icon={HandCoins}
+        title={"Pay bill"}
+        description={"Pay your bills online"}
+        balance={balance}
+        buttonText={"Pay bill"}
+        color={"red"}
+        successMessage={"Bill paid successfully"}
+        successColor={"text-red-500"}
+        onSubmit={payBill}
       />
     </div>
   );

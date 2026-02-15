@@ -15,6 +15,8 @@ const AddMoney = () => {
       balance={balance}
       buttonText={"Add money"}
       color={"green"}
+      successMessage={"Successfully added finances"}
+      successColor={"text-green-500"}
       onSubmit={addMoney} />
   );
 }
