@@ -1,25 +1,21 @@
 import { useState, useContext } from "react";
 import { FinanceContext } from "../../context/FinanceContext";
+import { Warehouse } from "lucide-react";
+import ActionPage from "../../components/ActionPages";
 
 const AddMoney = () => {
 
-  const {  addMoney } = useContext(FinanceContext);
-  const [ amount, setAmount ] = useState("");
-
-  const handleSubmit = () => {
-    addMoney(Number(amount));
-    setAmount("");
-  }
+  const { addMoney, balance } = useContext(FinanceContext);
 
   return (
-    <div>
-      <h3>Deposit</h3>
-      <input type="number"
-      value={amount}
-      onChange={(e) => setAmount(e.target.value)}
-      placeholder="Enter amount"/>
-      <button onClick={handleSubmit}>Add money</button>
-    </div>
+    <ActionPage
+      Icon={Warehouse}
+      title={"Deposit"}
+      description={"Add money to your account balance"}
+      balance={balance}
+      buttonText={"Add money"}
+      color={"green"}
+      onSubmit={addMoney} />
   );
 }
 
