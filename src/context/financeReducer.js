@@ -8,7 +8,7 @@ const financeReducer = (state, action) => {
         transactions: [
           {
             id: Date.now(),
-            type: "deposit",
+            type: "Deposit",
             amount: action.payload,
             date: new Date().toISOString()
           },
@@ -23,7 +23,7 @@ const financeReducer = (state, action) => {
         transactions: [
           {
             id: Date.now(),
-            type: "expense",
+            type: "Expense",
             amount: action.payload,
             date: new Date().toISOString()
           },
