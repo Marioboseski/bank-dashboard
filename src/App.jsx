@@ -18,9 +18,8 @@ const App = () => {
           <Route path="/addmoney" element={<AddMoney />} />
           <Route path="/paybill" element={<PayBill />} />
         </Route>
-
         <Route path="/" element={<Auth />} />
-      </Routes>      
+      </Routes>
     </div>
   );
 }
