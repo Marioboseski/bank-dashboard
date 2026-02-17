@@ -33,6 +33,7 @@ const Profile = () => {
   }).format(balance);
 
   return (
+    <div className="container">
     <div className="flex justify-center items-center min-h-dvh p-3">
       <div className="flex flex-col justify-center items-center w-full gap-3 p-3 border-2 border-gray-300 rounded-xl shadow-lg">
         <p className="flex justify-center items-center bg-blue-300 border-2 border-blue-600 rounded-full w-full max-w-36 min-h-36 text-3xl">{firstLetter}</p>
@@ -41,10 +42,11 @@ const Profile = () => {
         <div className="flex flex-col justify-center items-center text-center gap-3 border-2 border-gray-300 rounded-lg w-full max-w-64 min-h-40">
           <p className="text-xl text-gray-500">Current balance</p>
           <p className="text-xl border-b-2 border-gray-300 p-1">{formattedBalance}</p>
-          <Link to={"/profile/edit"} className="bg-blue-300 border-2 border-blue-400 text-lg text-blue-600 rounded-md  p-1 w-full max-w-40">Edit profile</Link>
+          <Link to={"/profile/edit"} className="bg-blue-300 border-2 border-blue-400 text-lg text-blue-600 rounded-md  p-1 w-full max-w-40 hover:bg-blue-400">Edit profile</Link>
         </div>
-        <button onClick={handleLogout} className="bg-gray-300 border-2 border-black/80 rounded-md text-lg p-1 w-full max-w-24">Logout</button>
+        <button onClick={handleLogout} className="bg-gray-300 border-2 border-black/80 rounded-md text-lg p-1 w-full max-w-24 hover:bg-gray-100">Logout</button>
       </div>
+    </div>
     </div>
   );
 }

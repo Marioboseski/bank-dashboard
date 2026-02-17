@@ -10,7 +10,7 @@ const TransactionsItem = ({ transaction }) => {
   }).format(transaction.amount);
 
   return (
-    <div className="p-2 w-full border-2 border-gray-300 shadow-lg rounded-md bg-gray-100">
+    <div className="p-2 w-full border-2 border-gray-300 shadow-lg rounded-md bg-gray-100 duration-500 transition-all hover:scale-105">
       <div className="flex justify-around items-center gap-2">
         <CirclePlus size={30} />
         <div className="flex flex-col justify-center">

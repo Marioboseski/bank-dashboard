@@ -7,11 +7,13 @@ const Transactions = () => {
   const { transactions } = useContext(FinanceContext);
 
   return (
-    <div className="flex flex-col p-2 gap-3">
+    <div className="flex flex-col justify-center items-center p-2 gap-3">
       <p className="text-xl">Transactions history</p>
-      {transactions.map((allTransactions) => (
-        <TransactionsItem key={allTransactions.id} transaction={allTransactions}/>
-      ))}
+      <div className="flex flex-col justify-center items-center gap-3 w-full max-w-[600px]">
+        {transactions.map((allTransactions) => (
+          <TransactionsItem key={allTransactions.id} transaction={allTransactions} />
+        ))}
+      </div>
     </div>
   );
 }
