@@ -4,12 +4,22 @@ const ActionPage = ({ Icon, title, description, balance, buttonText, color, succ
 
   const [amount, setAmount] = useState("");
   const [success, setSuccess] = useState("");
+  const [error, setError] = useState("");
 
   const handleSubmit = () => {
     if (!amount || amount <= 0) {
       return;
     }
-    onSubmit(Number(amount));
+
+    const result = onSubmit(Number(amount));
+    if(!result) {
+      setError("Not enough funds");
+      setTimeout(() => {
+        setError("");
+      }, 2000);
+      return;
+    }
+
     setAmount("");
     setSuccess(successMessage);
     setTimeout(() => {
@@ -31,15 +41,21 @@ const ActionPage = ({ Icon, title, description, balance, buttonText, color, succ
         </div>
         <p className="text-lg">{description}</p>
         <p className="text-xl text-gray-500"> Current balance: {formattedBalance}</p>
-        <input type="Number"
-          value={amount}
-          onChange={(e) => setAmount(e.target.value)}
-          placeholder="Enter amount"
-          className="border-2 border-gray-500 w-full max-w-72 rounded-md text-xl p-1" />
+        <div className="flex flex-col justify-center items-center gap-2">
+          <input type="Number"
+            value={amount}
+            onChange={(e) => setAmount(e.target.value)}
+            placeholder="Enter amount"
+            className="border-2 border-gray-500 w-full max-w-72 rounded-md text-xl p-1" />
 
           {success && (
-          <p className={`${successColor}`}>{success}</p>
-        )}
+            <p className={`${successColor}`}>{success}</p>
+          )}
+
+          {error && (
+            <p className="text-red-500">{error}</p>
+          )}
+        </div>
 
         <button onClick={handleSubmit} className={`${color === "green"
           ? "border-green-400 bg-green-100 hover:bg-green-300"

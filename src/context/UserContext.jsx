@@ -13,8 +13,15 @@ const UserProvider = ({ children }) => {
     setUser(null);
   };
 
+  const updateUser = (updatedData) => {
+    setUser((prev) => ({
+      ...prev,
+      ...updatedData,
+    }));
+  };
+
   return (
-    <UserContext.Provider value={{ user, loginUser, logoutUser }}>
+    <UserContext.Provider value={{ user, loginUser, logoutUser, updateUser }}>
       { children }
     </UserContext.Provider>
   );

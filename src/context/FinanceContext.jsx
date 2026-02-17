@@ -14,10 +14,15 @@ export const FinanceProvider = ({ children }) => {
 
   const addMoney = (amount) => {
     dispatch({ type: "ADD_MONEY", payload: amount });
+    return true;
   };
 
   const payBill = (amount) => {
+    if(state.balance < amount) {
+      return false;
+    }
     dispatch({ type: "PAY_BILL", payload: amount });
+    return true;
   };
 
   return (
