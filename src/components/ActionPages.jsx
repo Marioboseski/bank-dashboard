@@ -34,7 +34,7 @@ const ActionPage = ({ Icon, title, description, balance, buttonText, color, succ
 
   return (
     <div className="container">
-      <div className="flex justify-center items-center p-3 shadow-2xl md:rounded-md ">
+      <div className="flex justify-center items-center p-3 md:rounded-md min-h-[90vh] ">
         <div className="flex flex-col justify-around items-center w-full min-h-[calc(100vh-120px)] border-2 border-black/85 rounded-md">
           <div className="flex justify-center items-center gap-2 border-b-2 border-gray-300 p-1">
             {Icon && <Icon size={32} />}
