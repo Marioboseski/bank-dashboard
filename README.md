@@ -1,16 +1,58 @@
-# React + Vite
+# Bank Dashboard 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A responsive banking dashboard built with React.
+The application allows users to navigate between dashboard sections
+menage transactions, and quickly access core financial actions.
 
-Currently, two official plugins are available:
+# Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+* Responsive layout (mobile & desktop)
 
-## React Compiler
+* Bottom navigation for mobile devices 
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+* Sidebar navigation for larger screens 
 
-## Expanding the ESLint configuration
+* Quick actions (Add Money / Pay Bill)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+* Clean and reusable Components / code
+
+* Modern UI with Tailwind CSS 
+
+* Icon integration with Lucide React
+
+* Multiple pages and a lot of features
+
+* Scalable and well-structured project
+
+# Tech Stack 
+
+* React
+
+* Tailwind CSS
+
+* Vite
+
+* Lucide React
+
+# Core technologies 
+
+* HTML5
+
+* CSS3
+
+* JavaScript(ES6+)
+
+# Architecture Decisions 
+
+* Navigation is separated by device type (Navbar for mobile, Sidebar for desktop).
+
+*  Layout component controls overall page structure.
+
+* Semantic HTML and clean component separation are prioritized.
+
+# Author 
+
+Mario Boseski - Web developer
+
+
+
