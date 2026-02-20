@@ -40,7 +40,7 @@ const Profile = () => {
           <p className="font-semibold text-2xl">{user?.name}</p>
           <p className="text-lg">{user?.email}</p>
           <div className="flex flex-col justify-center items-center text-center gap-3 border-2 border-gray-300 rounded-lg w-full max-w-64 min-h-40">
-            <p className="text-xl text-gray-500">Current balance</p>
+            <p className="app-text">Current balance</p>
             <p className="text-xl border-b-2 border-gray-300 p-1">{formattedBalance}</p>
             <Link to={"/profile/edit"} className="bg-blue-300 border-2 border-blue-400 text-lg text-blue-600 rounded-md  p-1 w-full max-w-40 hover:bg-blue-400">Edit profile</Link>
           </div>

@@ -41,7 +41,7 @@ const ActionPage = ({ Icon, title, description, balance, buttonText, color, succ
             <p className="text-2xl">{title}</p>
           </div>
           <p className="text-lg">{description}</p>
-          <p className="text-xl text-gray-500"> Current balance: {formattedBalance}</p>
+          <p className="app-text"> Current balance: {formattedBalance}</p>
           <div className="flex flex-col justify-center items-center gap-2">
             <input type="Number"
               value={amount}

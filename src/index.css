@@ -18,5 +18,9 @@
   .forms-errors {
     @apply text-red-500 text-sm
   }
+
+  .app-text {
+    @apply text-lg text-gray-500
+  }
   
 }

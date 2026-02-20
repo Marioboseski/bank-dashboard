@@ -57,7 +57,7 @@ const LoginForm = () => {
           {errors.password && <p className="forms-errors">{errors.password}</p>}
         </div>
 
-        <button type="submit" className="border-2 p-1 w-full max-w-32 text-lg border-black rounded-md">Log in</button>
+        <button type="submit" className="border-2 p-1 w-full max-w-32 text-lg border-black rounded-md hover:bg-teal-300">Log in</button>
       </form>
     </div>
   );

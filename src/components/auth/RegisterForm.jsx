@@ -79,7 +79,7 @@ const RegisterForm = () => {
           {errors.location && <p className="forms-errors">{errors.location}</p>}
         </div>
 
-        <button type="submit" className="border-2 p-1 w-full max-w-32 text-lg border-black rounded-md">Register</button>
+        <button type="submit" className="border-2 p-1 w-full max-w-32 text-lg border-black rounded-md hover:bg-teal-300">Register</button>
       </form>
     </div>
   );
