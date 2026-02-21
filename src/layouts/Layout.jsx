@@ -4,11 +4,11 @@ import Sidebar from "../components/navbar/SideBar";
 
 const Layout = () => {
   return (
-    <div className="min-h-dvh md:flex">
+    <div className="h-dvh overflow-hidden md:flex">
 
       <Sidebar />
 
-      <main className="flex-1 pb-16 md:pb">
+      <main className="flex-1 pb-16 overflow-y-auto md:pb">
         <Outlet />
       </main>
 
