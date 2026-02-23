@@ -14,7 +14,7 @@ const TransactionsItem = ({ transaction }) => {
       <div className="flex justify-around items-center gap-2">
         <CirclePlus size={30} />
         <div className="flex flex-col justify-center">
-          <p className={deposit ? "text-green-500" : "text-red-500 text-lg"}>{transaction.type}</p>
+          <p className={deposit ? "text-green-500" : "text-red-500 text-lg"}>{transaction.bill || transaction.type}</p>
           <p className="text-sm">{transaction.date}</p>
         </div>
         <p className="text-xl">{formattedAmount}</p>

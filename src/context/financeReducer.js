@@ -19,12 +19,13 @@ const financeReducer = (state, action) => {
     case "PAY_BILL":
       return {
         ...state,
-        balance: state.balance - action.payload,
+        balance: state.balance - action.payload.amount,
         transactions: [
           {
             id: Date.now(),
             type: "Expense",
-            amount: action.payload,
+            amount: action.payload.amount,
+            bill: action.payload.bill,
             date: new Date().toISOString()
           },
           ...state.transactions

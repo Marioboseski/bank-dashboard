@@ -17,11 +17,11 @@ export const FinanceProvider = ({ children }) => {
     return true;
   };
 
-  const payBill = (amount) => {
+  const payBill = (amount, bill) => {
     if(state.balance < amount) {
       return false;
     }
-    dispatch({ type: "PAY_BILL", payload: amount });
+    dispatch({ type: "PAY_BILL", payload:{ amount, bill }});
     return true;
   };
 

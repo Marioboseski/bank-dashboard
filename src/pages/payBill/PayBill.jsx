@@ -19,6 +19,7 @@ const PayBill = () => {
         successMessage={"Bill paid successfully"}
         successColor={"text-red-500"}
         onSubmit={payBill}
+        showBillInput={true}
       />
     </div>
   );

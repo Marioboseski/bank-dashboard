@@ -1,17 +1,29 @@
 import { useState } from "react";
 
-const ActionPage = ({ Icon, title, description, balance, buttonText, color, successMessage, successColor, onSubmit }) => {
+const ActionPage = ({ Icon, title, description, balance, buttonText, color, successMessage, successColor, onSubmit, showBillInput }) => {
 
   const [amount, setAmount] = useState("");
   const [success, setSuccess] = useState("");
   const [error, setError] = useState("");
+  const [bill, setBill] = useState("");
 
   const handleSubmit = () => {
     if (!amount || amount <= 0) {
       return;
     }
 
-    const result = onSubmit(Number(amount));
+    if(showBillInput && !bill.trim()) {
+      setError("Please enter bill name");
+      setTimeout(() => {
+        setError("");
+      }, 2000);
+      return;
+    }
+
+    const result = showBillInput
+      ? onSubmit(Number(amount), bill)
+      : onSubmit(Number(amount));
+
     if (!result) {
       setError("Not enough funds");
       setTimeout(() => {
@@ -21,6 +33,7 @@ const ActionPage = ({ Icon, title, description, balance, buttonText, color, succ
     }
 
     setAmount("");
+    setBill("");
     setSuccess(successMessage);
     setTimeout(() => {
       setSuccess("");
@@ -43,6 +56,15 @@ const ActionPage = ({ Icon, title, description, balance, buttonText, color, succ
           <p className="text-lg">{description}</p>
           <p className="app-text"> Current balance: {formattedBalance}</p>
           <div className="flex flex-col justify-center items-center gap-2">
+            {showBillInput && (
+              <input type="text"
+                value={bill}
+                onChange={(e) => setBill(e.target.value)}
+                placeholder="Enter bill name"
+                className="border-2 border-gray-500 w-full max-w-72 rounded-md text-xl p-1"
+               />
+            )}
+
             <input type="Number"
               value={amount}
               onChange={(e) => setAmount(e.target.value)}
