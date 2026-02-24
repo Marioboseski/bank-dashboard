@@ -52,7 +52,7 @@ menage transactions, and quickly access core financial actions.
 
 # Live link
 
-at https://marioboseski.github.io/bank-dashboard/
+https://marioboseski.github.io/bank-dashboard/
 
 # Author 
 
