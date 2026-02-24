@@ -12,7 +12,7 @@ const PayBill = () => {
       <ActionPage
         Icon={HandCoins}
         title={"Pay bill"}
-        description={"Pay your bills online"}
+        description={"Pay your bills online, fast and easy!"}
         balance={balance}
         buttonText={"Pay bill"}
         color={"red"}
